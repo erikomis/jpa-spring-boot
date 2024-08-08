@@ -1,0 +1,19 @@
+version: "3.8"
+
+
+services:
+  mariadb:
+    image: mariadb:11.2
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: rasfood
+      MYSQL_USER: rasmoo
+      MYSQL_PASSWORD: senha123
+    volumes:
+      - data_mariadb:/var/lib/mysql
+
+volumes:
+  data_mariadb:
